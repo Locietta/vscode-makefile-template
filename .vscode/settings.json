@@ -1,9 +1,9 @@
 {
   "code-runner.executorMap": {
-    // PowerShell Style Script
+    // windows (powershell)
     "c": "cd $dirWithoutTrailingSlash; if (Test-Path makefile){ make } else{ clang -Wall -Wextra -O2 \"$fileName\" -o $fileNameWithoutExt }; if ($?) { echo \"----------------------------------\"; ./$fileNameWithoutExt}",
-    "cpp": "cd $dirWithoutTrailingSlash; if (Test-Path makefile){ make } else{ clang++ -std=c++20 -Wall -Wextra -O2 \"$fileName\" -o $fileNameWithoutExt }; if ($?) { echo \"----------------------------------\"; ./$fileNameWithoutExt}"
-    // Bash Style Script
+    "cpp": "cd $dirWithoutTrailingSlash; if (Test-Path makefile){ make } else{ clang++ -Wall -Wextra -O2 \"$fileName\" -o $fileNameWithoutExt }; if ($?) { echo \"----------------------------------\"; ./$fileNameWithoutExt}"
+    // linux (bash) 
     // "c": "cd $dirWithoutTrailingSlash && [ -e makefile ] && { make ;echo -n ;} || gcc -Wall -O2 $fileName -o test && echo \"----------------------------------\" && ./test",
     // "cpp": "cd $dirWithoutTrailingSlash && [ -e makefile ] && { make ;echo -n ;} || g++ -Wall -O2 $fileName -o test && echo \"----------------------------------\" && ./test",
   },
