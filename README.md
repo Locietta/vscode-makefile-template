@@ -16,6 +16,8 @@ A simple C++ Multi-file VSCode project template based on Makefile.
 
 ## 使用 Usage
 
+**mingw项目中的make叫做`mingw32-make`，需要复制一份重命名为`make`**
+
 * 在主文件`main.cpp`使用code-runner可以直接编译运行
 * 按F5可以Debug（注意要选择make.exe的调试）
 * 如果需要修改主文件名称，则应修改Makefile的`BIN`变量和launch.json中的`program`字段
