@@ -25,18 +25,20 @@ INCS     = -I"./include"
 # 链接选项
 LDFLAGS  = -static-libgcc
 # C编译选项
-CFLAGS = $(INCS) -O2 -DNDEBUG
+CFLAGS = $(INCS) -Werror -O2 -DNDEBUG
 # C++编译选项
-CXXFLAGS = $(INCS) -std=c++17 -Werror -O2 -DNDEBUG
+CXXFLAGS = $(INCS) -Werror -O2 -DNDEBUG
 
-# 为debug目标指定不同的c++编译选项
-debug: CXXFLAGS = $(INCS) -std=c++17 -Wall -Wextra -O0 -g
+# 为debug目标指定不同的C/C++编译选项
+debug: CXXFLAGS = $(INCS) -Wall -Wextra -O0 -g
+
+debug: CFLAGS = $(INCS) -Wall -Wextra -O0 -g
 
 ##################################################
 
 # don't touch here, unless you really know what you're doing
 
-.PHONY: release debug clean
+.PHONY: release debug clean cb_gen
 
 debug: $(BIN) # default target
 
