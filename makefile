@@ -9,7 +9,7 @@ vpath %.c ./src
 
 # 主文件和生成的可执行文件名称
 BIN      = main
-# 源文件列表，main.cpp和src文件夹下所有的.cpp文件
+# 源文件列表，主文件和src文件夹下所有的.cpp文件
 SRC      = $(BIN).cpp $(wildcard ./src/*.cpp)
 # 目标文件列表，源文件列表的.cpp后缀换成.o
 OBJ      = $(patsubst %.cpp, %.o, $(SRC))
