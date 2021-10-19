@@ -46,10 +46,10 @@ $(BIN): $(OBJ)
 
 release: $(BIN) 
 
-# don't use it if you don't know clangd
+# don't use it if you don't know clangd or LSP
 cb_gen: # generate compile database for clangd, you may need `pip install compiledb`
-	@make clean
-	@compiledb make debug -j8
+	@compiledb -n make debug -j8
+	@mkdir -p build && mv compile_commands.json build/
 
 clean:
 	${RM} $(OBJ) $(BIN)
